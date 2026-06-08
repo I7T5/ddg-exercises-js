@@ -26,7 +26,12 @@ class SimplicialComplexOperators {
          */
         assignElementIndices(mesh) {
                 // TODO
-                indexElements(mesh.vertices); 
+                let i = 0;
+                for (let v of mesh.vertices) v.index = i++;
+                i = 0;
+                for (let e of mesh.edges) e.index = i++;
+                i = 0;
+                for (let f of mesh.faces) f.index = i++;
         }
 
         /** Returns the vertex-edge adjacency matrix of the given mesh.
